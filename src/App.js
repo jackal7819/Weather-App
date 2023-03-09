@@ -3,13 +3,14 @@ import CurrentWeather from './components/CurrentWeather';
 import Search from './components/Search';
 import { WEATHER_API_URL, WEATHER_API_KEY } from './api';
 import { useState } from 'react';
+import Forecast from './components/Forecast';
 
 const App = () => {
     const [currentWeather, setCurrentWeather] = useState(null);
     const [forecast, setForecast] = useState(null);
 
     const handleOnSearchChange = (searchData) => {
-        const [lat, lon] = searchData.value.split('');
+        const [lat, lon] = searchData.value.split(' ');
 
         const currentWeatherFetch = fetch(
             `${WEATHER_API_URL}/weather?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=metric`
@@ -32,13 +33,14 @@ const App = () => {
             .catch((err) => console.log(err));
     };
 
-    console.log(currentWeather);
     console.log(forecast);
+    console.log(currentWeather);
 
     return (
         <div className='container'>
             <Search onSearchChange={handleOnSearchChange} />
             {currentWeather && <CurrentWeather data={currentWeather} />}
+            {forecast && <Forecast data={forecast} />}
         </div>
     );
 };
