@@ -126,9 +126,8 @@ body {
 
     .daily-details-grid {
         display: grid;
-        grid-row-gap: 0;
-        grid-column-gap: 15px;
         row-gap: 0;
+        column-gap: 15px;
         grid-template-columns: auto auto;
         flex: 1 1;
         padding: 5px 15px;

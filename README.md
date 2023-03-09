@@ -1,4 +1,8 @@
-# React Project
+# Weather App
+
+It is React project with SCSS, that build a weather application using the OpenWeatherMap API and GeoDB API with places autocomplete. 
+
+Demo - https://weatherapp-p2bp.onrender.com
 
 ## Available Scripts
 
